@@ -1,0 +1,8 @@
+.DS_Store
+
+bower_components
+node_modules
+public
+
+config.coffee
+app/config/config.coffee

@@ -1,0 +1,32 @@
+.banner
+  img(ng-src="images/logo.png")
+
+nav.navbar.navbar-default
+  .collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li(ui-sref-active="active")
+        a(ui-sref="home")
+          |  HOME
+      li(ui-sref-active="active")
+        a(ui-sref="about")
+          |  ABOUT
+      li(ui-sref-active="active")
+        a(ui-sref="news")
+          |  NEWS
+      li(ui-sref-active="active")
+        a(ui-sref="productions")
+          |  PRODUCTIONS
+      li(ui-sref-active="active")
+        a(ui-sref="support")
+          |  SUPPORT
+      li(ui-sref-active="active")
+        a(ui-sref="recruitment")
+          |  RECRUITMENT
+      li(ui-sref-active="active")
+        a(ui-sref="contact")
+          |  CONTACT
+
+.slides(ng-controller="HeaderCtrl")
+  carousel(interval="5000")
+    slide(ng-repeat="slide in ui.slides" active="slide.active")
+      img(ng-src="{{slide.image}}" style="margin: auto")

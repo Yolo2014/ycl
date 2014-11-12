@@ -1,0 +1,24 @@
+{
+  "name": "ycl",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "coffee-script": "~1.7.1",
+    "coffee-script-brunch": "brunch/coffee-script-brunch",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "stylus-brunch": ">= 1.0 < 1.8",
+    "css-brunch": ">= 1.0 < 1.8",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "jaded-brunch": "~1.7.8-hotfix-2",
+    "angular-templates-brunch": "git://github.com/jarvisaoieong/angular-templates-brunch#patch",
+    "ng-annotate-uglify-js-brunch": ">= 1.0 < 1.8",
+    "digest-brunch": "~1.2.1"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": ">= 1.0 < 1.8"
+  }
+}

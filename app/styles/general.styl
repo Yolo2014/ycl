@@ -1,0 +1,19 @@
+@media (min-width: 960px)
+  .container 
+    width 960px
+i
+  cursor pointer
+
+a
+  cursor pointer
+
+sizes = {
+  xs: 1px
+  sm: 3px
+  md: 5px
+  lg: 10px
+}
+for position in top left right bottom
+  for size, value in sizes
+    .margin-{position}-{size} 
+      margin-{position} value
