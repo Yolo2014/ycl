@@ -1,53 +1,80 @@
 .row
   .col-md-4.category
+    .list-group
+      a(ng-click="show(1)").list-group-item.title Connector
+        span.badge.margin-top-lg 7
+      a(ng-click="show(2)").list-group-item.title Patch Cord
+        span.badge.margin-top-lg 7
+      a(ng-click="show(3)").list-group-item.title Adapter
+        span.badge.margin-top-lg 6
+      a(ng-click="show(4)").list-group-item.title Pre-embedded Tech
+        span.badge.margin-top-lg 2
+      a(ng-click="show(5)").list-group-item.title Splitter
+        span.badge.margin-top-lg 2
+      a(ng-click="show(6)").list-group-item.title WDM
+        span.badge.margin-top-lg 3
+      a(ng-click="show(7)").list-group-item.title Optical Transceiver
+        span.badge.margin-top-lg 6
+      a(ng-click="show(8)").list-group-item.title Optical Media Converter
+        span.badge.margin-top-lg 2
+      a(ng-click="show(9)").list-group-item.title Wiring
+        span.badge.margin-top-lg 13
+      //- a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
+      //-   span.badge.margin-top-lg {{product.items.length}}
+      //-   | {{product.category}}
     //- .list-group
-    //-   .list-group-item.title Categories
-    //-   a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
-    //-     span.badge.margin-top-lg {{product.items.length}}
-    //-     | {{product.category}}
+    //-   .list-group-item.title(ng-click="showPatch()") Patch Cord
+    //-   //- a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
+    //-   //-   span.badge.margin-top-lg {{product.items.length}}
+    //-   //-   | {{product.category}}
     //- .list-group
-    //-   .list-group-item.title Categories
-    //-   a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
-    //-     span.badge.margin-top-lg {{product.items.length}}
-    //-     | {{product.category}}
+    //-   .list-group-item.title(ng-click="showAdapter()") Adapter
+    //-   //- a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
+    //-   //-   span.badge.margin-top-lg {{product.items.length}}
+    //-   //-   | {{product.category}}
     //- .list-group
-    //-   .list-group-item.title Categories
-    //-   a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
-    //-     span.badge.margin-top-lg {{product.items.length}}
-    //-     | {{product.category}}
+    //-   .list-group-item.title(ng-click="showPre()") Pre-embedded Tech
+    //-   //- a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
+    //-   //-   span.badge.margin-top-lg {{product.items.length}}
+    //-   //-   | {{product.category}}
     //- .list-group
-    //-   .list-group-item.title Categories
-    //-   a.list-group-item(ng-repeat="product in products" ng-click="showList($index)")
-    //-     span.badge.margin-top-lg {{product.items.length}}
-    //-     | {{product.category}}
+    //-   .list-group-item.title(ng-click="showSplitter()") Splitter
+    //- .list-group
+    //-   .list-group-item.title(ng-click="showWDM") WDM
+    //- .list-group
+    //-   .list-group-item.title(ng-click="showtransceiver()") Optical Transceiver
+    //- .list-group
+    //-   .list-group-item.title(ng-click="showConverter()") Optical Media Converter
+    //- .list-group
+    //-   .list-group-item.title(ng-click="showWiring()") Wiring
 
-    accordion(close-others="true")
-      accordion-group(heading="WIRING")
-        .list-group
-          a.list-group-item(ng-repeat="product in wiring" ng-click="showList1($index)")
-            span.badge.margin-top-lg {{product.items.length}}
-            | {{product.category}}
-      accordion-group(heading="PTICAL DEVICE")
-        .list-group
-          a.list-group-item(ng-repeat="product in ptical" ng-click="showList2($index)")
-            span.badge.margin-top-lg {{product.items.length}}
-            | {{product.category}}
-      accordion-group(heading="CABLE")
-        .list-group
-          a.list-group-item(ng-repeat="product in cable" ng-click="showList3($index)")
-            span.badge.margin-top-lg {{product.items.length}}
-            | {{product.category}}
-      accordion-group(heading="OTHER")
-        .list-group
-          a.list-group-item(ng-repeat="product in other" ng-click="showList4($index)")
-            span.badge.margin-top-lg {{product.items.length}}
-            | {{product.category}}
+    //- accordion(close-others="true")
+    //-   accordion-group(heading="WIRING")
+    //-     .list-group
+    //-       a.list-group-item(ng-repeat="product in wiring" ng-click="showList1($index)")
+    //-         span.badge.margin-top-lg {{product.items.length}}
+    //-         | {{product.category}}
+    //-   accordion-group(heading="PTICAL DEVICE")
+    //-     .list-group
+    //-       a.list-group-item(ng-repeat="product in ptical" ng-click="showList2($index)")
+    //-         span.badge.margin-top-lg {{product.items.length}}
+    //-         | {{product.category}}
+    //-   accordion-group(heading="CABLE")
+    //-     .list-group
+    //-       a.list-group-item(ng-repeat="product in cable" ng-click="showList3($index)")
+    //-         span.badge.margin-top-lg {{product.items.length}}
+    //-         | {{product.category}}
+    //-   accordion-group(heading="OTHER")
+    //-     .list-group
+    //-       a.list-group-item(ng-repeat="product in other" ng-click="showList4($index)")
+    //-         span.badge.margin-top-lg {{product.items.length}}
+    //-         | {{product.category}}
   .col-md-8
     .panel.panel-default
       .panel-heading
         .panel-title Productions {{category}}
       .panel-body.product-list
-        .item(ng-repeat="item in list").pull-left
+        .item(ng-repeat="item in products").pull-left
           img(ng-src="{{item.image}}")
           .name
             a(href="#") {{item.name}}
