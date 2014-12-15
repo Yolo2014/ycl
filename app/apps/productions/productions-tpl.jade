@@ -72,9 +72,10 @@
   .col-md-8
     .panel.panel-default
       .panel-heading
-        .panel-title Productions {{category}}
+        .panel-title Productions {{categoryName}}
       .panel-body.product-list
         .item(ng-repeat="item in products").pull-left
-          img(ng-src="{{item.image}}")
+          a(ng-href="#/productions/{{category}}/{{item.name}}")
+            img(ng-src="{{item.image}}")
           .name
-            a(href="#") {{item.name}}
+            a(ng-href="#/productions/{{category}}/{{item.name}}") {{item.name}}

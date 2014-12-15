@@ -13,6 +13,11 @@
   <script src="DIGEST(javascripts/vendor.js)"></script>
   <script src="DIGEST(javascripts/templates.js)"></script>
   <script src="DIGEST(javascripts/app.js)"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('iframe').iFrameResize();
+    });    
+  </script>
 </head>
 
 <body ng-app="app">
@@ -22,4 +27,5 @@
     <div ng-include="'apps/footer/footer-tpl'"></div>
   </div>
 </body>
+
 </html>

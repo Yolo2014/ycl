@@ -22,6 +22,15 @@ angular.module 'app'
         url: '/productions'
         templateUrl: 'apps/productions/productions-tpl'
         controller: 'ProductCtrl'
+
+      .state 'detail',
+        url: '/productions/:category/:production'
+        templateUrl: 'apps/productions/production-detail'
+        controller: 'ProductionDetailCtrl'
+        # controller: ($scope, $stateParams) ->
+        #   $scope.category = $stateParams.category
+        #   $scope.production = $stateParams.production
+        #   # console.log $scope.category,$scope.production
       
       .state 'support',
         url: '/support'
