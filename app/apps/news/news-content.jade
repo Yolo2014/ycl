@@ -1,11 +1,13 @@
-.panel.panel-default
-  .panel-heading
-    .panel-title Contact us
-  .panel-body.contact-content
-    .row
-      .col-md-6
-        img(ng-src="images/map.jpg")
-      .col-md-6
+.row
+  .col-md-8
+    iframe(ng-src="{{url}}" width="100%")
+          
+  .col-md-4
+    .panel.panel-default
+      .panel-heading
+        .panel-title Contact us
+      .panel-body
+        img(ng-src="images/map-sm.jpg").margin-bottom-lg
         p
           strong Email: 
           span 18688717270@163.com
@@ -18,4 +20,5 @@
         p 
           strong Factory Address: 
           span 3rd floor, 4th building, Laobingtianxia industrial area, Zhoushi Rd. Shiyan Str. Baoan District, Shenzhen
+
 

@@ -1,7 +1,5 @@
 angular.module 'app'
-.controller 'ProductCtrl', ($scope) ->
-  $scope.category = 'connector'
-  $scope.categoryName = 'Connector'
+.controller 'ProductCtrl', ($scope, $stateParams) ->
   
   connector = [
     name: 'fc'
@@ -165,44 +163,42 @@ angular.module 'app'
     image: 'productions/wiring/Optical Main Distribution Frame (OMDF).jpg'
   ]
 
-  # $scope.products = _.union connector, patchCord, adapter, PreEmbeddedTech, splitter, WDM, OpticalTransceiver, OpticalMediaConverter,wiring
-  $scope.products = connector
+  $stateParams.category = "connector" unless $stateParams.category
 
-  $scope.show = (type) ->
-    switch type
-      when 1
-        $scope.products =  connector
-        $scope.category = 'connector'
-        $scope.categoryName = "Connector"
-      when 2
-        $scope.products =  patchCord
-        $scope.category = 'patchCord'
-        $scope.categoryName = "Patch Cord"
-      when 3
-        $scope.products =  adapter
-        $scope.category = 'adapter'
-        $scope.categoryName = "Adapter"
-      when 4
-        $scope.products =  PreEmbeddedTech
-        $scope.category = 'PreEmbeddedTech'
-        $scope.categoryName = "Pre-embedded Tech"
-      when 5
-        $scope.products =  splitter
-        $scope.category = 'splitter'
-        $scope.categoryName = "Splitter"
-      when 6
-        $scope.products =  WDM
-        $scope.category = 'wdm'
-        $scope.categoryName = "WDM"
-      when 7
-        $scope.products =  OpticalTransceiver
-        $scope.category = 'OpticalTransceiver'
-        $scope.categoryName = "Optical Transceiver"
-      when 8
-        $scope.products =  OpticalMediaConverter
-        $scope.category = 'OpticalMediaConverter'
-        $scope.categoryName = "Optical Media Converter"
-      when 9
-        $scope.products =  wiring
-        $scope.category = 'wiring'
-        $scope.categoryName = "Wiring"
+  switch $stateParams.category
+    when "connector"
+      $scope.products =  connector
+      $scope.category = 'connector'
+      $scope.categoryName = "Connector"
+    when "patchCord"
+      $scope.products =  patchCord
+      $scope.category = 'patchCord'
+      $scope.categoryName = "Patch Cord"
+    when "adapter"
+      $scope.products =  adapter
+      $scope.category = 'adapter'
+      $scope.categoryName = "Adapter"
+    when "PreEmbeddedTech"
+      $scope.products =  PreEmbeddedTech
+      $scope.category = 'PreEmbeddedTech'
+      $scope.categoryName = "Pre-embedded Tech"
+    when "splitter"
+      $scope.products =  splitter
+      $scope.category = 'splitter'
+      $scope.categoryName = "Splitter"
+    when "wdm"
+      $scope.products =  WDM
+      $scope.category = 'wdm'
+      $scope.categoryName = "WDM"
+    when "OpticalTransceiver"
+      $scope.products =  OpticalTransceiver
+      $scope.category = 'OpticalTransceiver'
+      $scope.categoryName = "Optical Transceiver"
+    when "OpticalMediaConverter"
+      $scope.products =  OpticalMediaConverter
+      $scope.category = 'OpticalMediaConverter'
+      $scope.categoryName = "Optical Media Converter"
+    when "wiring"
+      $scope.products =  wiring
+      $scope.category = 'wiring'
+      $scope.categoryName = "Wiring"

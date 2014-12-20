@@ -17,9 +17,14 @@ angular.module 'app'
       .state 'news',
         url: '/news'
         templateUrl: 'apps/news/news-tpl'
+
+      .state 'content',
+        url: '/news/:id'
+        templateUrl: 'apps/news/news-content'
+        controller: 'NewsContentCtrl'
       
       .state 'productions',
-        url: '/productions'
+        url: '/productions/:category'
         templateUrl: 'apps/productions/productions-tpl'
         controller: 'ProductCtrl'
 
